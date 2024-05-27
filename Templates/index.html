@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm" method="post">
+        <div class="form-group">
+            <label for="value1">Type_of_Renewable_Energy:</label>
+            <input type="text" id="value1" name="value1" placeholder="Enter the value" value="4">
+        </div>
+            <div class="form-group">
+            <label for="value2">Installed_Capacity_MW</label>
+            <input type="text" id="value2" name="value2" placeholder="Enter the value" value="93.42320532">
+        </div>
+        <div class="form-group">
+            <label for="value3">Energy_Production_MWh:</label>
+            <input type="text" id="value3" name="value3" placeholder="Enter the value" value="103853.2206">
+        </div>
+        <div class="form-group">
+            <label for="value4">Energy_Consumption_MWh:</label>
+            <input type="text" id="value4" name="value4" placeholder="Enter the value" value="248708.4892">
+        </div>
+        <div class="form-group">
+            <label for="value5">Energy_Storage_Capacity_MWh:</label>
+            <input type="text" id="value5" name="value5" placeholder="Enter the value" value="2953.248771">
+        </div>
+        <div class="form-group">
+            <label for="value6">Storage_Efficiency_Percentage:</label>
+            <input type="text" id="value6" name="value6" placeholder="Enter the value" value="89.88756208">
+        </div>
+        <div class="form-group">
+            <label for="value7">Grid_Integration_Level:</label>
+            <input type="text" id="value7" name="value7" placeholder="Enter the value" value="4">
+        </div>
+        <div class="form-group">
+            <label for="value8">Initial_Investment_USD:</label>
+            <input type="text" id="value8" name="value8" placeholder="Enter the value" value="473224763.9">
+        </div>
+        <div class="form-group">
+            <label for="value9">Funding_Sources:</label>
+            <input type="text" id="value9" name="value9" placeholder="Enter the value" value="1">
+        </div>
+        <div class="form-group">
+            <label for="value10">Financial_Incentives_USD:</label>
+            <input type="text" id="value10" name="value10" placeholder="Enter the value" value="9207772.186">
+        </div>
+        <div class="form-group">
+            <label for="value11">Air_Pollution_Reduction_Index:</label>
+            <input type="text" id="value11" name="value11" placeholder="Enter the value" value="81.7424612">
+        </div>
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            var fields = ['value1', 'value2', 'value3', 'value4', 'value5', 'value6', 'value7', 'value8', 'value9', 'value10','value11'];
+            for (var i = 0; i < fields.length; i++) {
+                var field = document.getElementById(fields[i]).value;
+                if (field === '') {
+                    alert('All fields must be filled out');
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function submitForm() {
+            if (validateForm()) {
+                document.getElementById("myForm").submit();
+            }
+        }
+    </script>
+</body>
+</html>
